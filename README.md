@@ -55,7 +55,7 @@ Either one of the websites below will do since both produce the same link struct
 - http://www.sixcrazyminutes.com/forums/ **(I use this)**
 - https://www.gardenstew.com/
 
-### How to run the learning links' patterns and create regular expression:###
+### How to run the learning links' patterns and create regular expression:
 Before start running, DELETE the **`index_url.txt`**, **`thread_url.txt`**, **`page_flipping_url.txt`** and **`URL_Regex.txt`**. 
 Then, go to **`main.py`** and run it! (Will take some time)
 
