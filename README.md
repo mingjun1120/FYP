@@ -48,7 +48,7 @@ respectively. After that, the program will find out the pattern of the 3 differe
 
 So now, we have the regular expression for **`index_url`**, **`thread_url`** and **`page_flipping_url`**. Then, **`ForumCrawler.py`** just need to get 
 these 3 regular expression and perform crawling.
-(Refer **How to run** section)
+(Refer to **How to run** section)
 
 ## Website used to learn pattern and create regular expression:
 Either one of the websites below will do since both produce the same link structure pattern:
