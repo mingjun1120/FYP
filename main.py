@@ -20,7 +20,3 @@ if __name__ == '__main__':
         for line in [regexCreatedIndex, firstBackUrlIndex, regexCreatedThread, firstBackUrlThread, regexCreatedPageFlip, firstBackUrlPageFlip]:
             f.write(line)
             f.write('\n')
-
-    # cmd = ["python", "test.py", regexCreatedIndex, firstBackUrlIndex, regexCreatedThread, firstBackUrlThread,
-    #        regexCreatedPageFlip, firstBackUrlPageFlip]
-    # subprocess.call(cmd, shell=True)

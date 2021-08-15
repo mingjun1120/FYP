@@ -33,7 +33,7 @@ class ForumcrawlerSpider(CrawlSpider):
     allowed_domains = ['namepros.com']
     start_urls = ['https://www.namepros.com/']
 
-    rules = (Rule(LinkExtractor(tags='a', allow=(regexCreatedIndex[1:-1],)), callback='parse_item', follow=True),)
+    rules = (Rule(LinkExtractor(tags='a', allow=(firstBackUrlPageFlip + '\/' + regexCreatedIndex[1:-1],)), callback='parse_item', follow=True),)
 
     def parse_item(self, response):
 
