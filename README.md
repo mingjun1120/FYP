@@ -50,7 +50,7 @@ So now, we have the regular expression for **`index_url`**, **`thread_url`** and
 these 3 regular expression and perform crawling.
 (Refer to **How to run** section)
 
-## Website used to learn pattern and create regular expression:
+## Website used to learn links pattern and create regular expression:
 Either one of the websites below will do since both produce the same link structure pattern:
 - http://www.sixcrazyminutes.com/forums/ **(I use this)**
 - https://www.gardenstew.com/
