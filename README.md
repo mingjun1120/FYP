@@ -50,10 +50,14 @@ So now, we have the regular expression for **`index_url`**, **`thread_url`** and
 these 3 regular expression and perform crawling.
 (Refer to **How to run** section)
 
-## Website used to learn links pattern and create regular expression:
+## Website used to learn links' patterns and create regular expression:
 Either one of the websites below will do since both produce the same link structure pattern:
 - http://www.sixcrazyminutes.com/forums/ **(I use this)**
 - https://www.gardenstew.com/
+
+**How to run the learning links' patterns and create regular expression:** 
+Before start running, DELETE the **`index_url.txt`**, **`thread_url.txt`**, **`page_flipping_url.txt`** and **`URL_Regex.txt`**. 
+Then, go to **`main.py`** and run it! (Will take some time)
 
 ## Web forum that can be crawled
 Most of the web forums that was built by using [XenForo](https://xenforo.com/) can be crawled. Here are some of the lists you can try:
