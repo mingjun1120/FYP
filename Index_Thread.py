@@ -1,3 +1,5 @@
+import os
+
 from requests_html import HTMLSession
 import pandas as pd
 
@@ -182,6 +184,9 @@ def main_Index_Thread():
                 index_BoardList_urls += total_index_BoardList_urls
                 index_board_thread_urls += total_index_board_thread_urls
 
+                if os.path.isfile("index_url.txt"):
+                    open('index_url.txt', 'w').close()
+
                 with open('index_url.txt', 'a') as f:
                     for line in index_BoardList_urls + index_board_thread_urls:
                         f.write(line)
@@ -199,6 +204,9 @@ def main_Index_Thread():
                 # Get the index and thread urls in a list
                 it_group = get_it_group(df_href_1st3_col, df_text_1st3_col)
                 print(f"Thread URLs:\n{it_group}")
+
+                if os.path.isfile("thread_url.txt"):
+                    open('thread_url.txt', 'w').close()
 
                 with open('thread_url.txt', 'a') as f:
                     for line in it_group:

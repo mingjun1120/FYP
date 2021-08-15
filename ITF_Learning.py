@@ -1,6 +1,4 @@
 import re
-from typing import List
-
 import pandas as pd
 
 '''
@@ -131,7 +129,7 @@ def learn_ITF(pageType, urlsType, regexForPageFlip = None):
         min_key = min(each_unique_value_count_first_back_split_url, key=each_unique_value_count_first_back_split_url.get)
         min_value = min(each_unique_value_count_first_back_split_url.values())
 
-        if max_value > 1000 and min_value > 1000:
+        if max_value >= 15 and min_value >= 15:
             combined = list(set(main_url))[0] + f'({max_key}|{min_key})' + '/'
             first_back_Url = f'({max_key}|{min_key})'
         else:

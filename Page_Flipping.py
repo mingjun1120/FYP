@@ -1,5 +1,6 @@
 import requests
 from requests_html import HTMLSession
+import os
 
 'Reference: https://stackoverflow.com/questions/40985060/scrapy-css-selector-get-text-of-all-inner-tags'
 
@@ -173,6 +174,10 @@ def main_PageFlipping():
     # all_thread_index_urls = ['https://www.redandwhitekop.com/forum/index.php?board=17.0'] #https://www.gardenstew.com/threads/new-to-gardening%E2%80%8D.42723/
 
     results = findPageFlippingUrls(all_thread_index_urls)
+
+    if os.path.isfile("page_flipping_url.txt"):
+        open('page_flipping_url.txt', 'w').close()
+
     with open('page_flipping_url.txt', 'a') as f:
         for line in results:
             f.write(line)
