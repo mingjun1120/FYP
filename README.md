@@ -16,6 +16,10 @@ Python 3.7+ will do
 - [Documentation for Scrapy](https://docs.scrapy.org/en/latest/)
 - [Documentation for request-html](https://docs.python-requests.org/projects/requests-html/en/latest/)
 
+## Tutorial
+- [Web Scraping With Python and Requests-HTML](https://www.jcchouinard.com/web-scraping-with-python-and-requests-html/)
+- [Create Email Extractor With Python Scrapy](https://youtu.be/nRZ2q83AG4g) (Take the idea to scrape your required data)
+
   
 ## How to run
 
