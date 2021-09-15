@@ -323,5 +323,3 @@ def main_ITF_Learning():
 
 if __name__ == '__main__':
     main_ITF_Learning() # regexCreatedIndex, regexCreatedThread, regexCreatedPageFlip
-
-
