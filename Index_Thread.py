@@ -1,5 +1,4 @@
 import os
-
 from requests_html import HTMLSession
 import pandas as pd
 
@@ -156,7 +155,7 @@ def main_Index_Thread():
         counter = 0
 
         while True:
-            # Retrieve the link of the anchor text as well as the text of the anchor text into 2 different df respectively1
+            # Retrieve the link of the anchor text as well as the text of the anchor text into 2 different df respectively
             df_href_1st3_col, df_text_1st3_col = get_href_and_text_df(url, 'ol#forums',
                                                                       'ol.nodeList > li.node.forum.level_2')
 
