@@ -1,5 +1,4 @@
 import os
-
 from ITF_Learning import main_ITF_Learning
 from Index_Thread import main_Index_Thread
 from Page_Flipping import main_PageFlipping
