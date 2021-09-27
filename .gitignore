@@ -138,6 +138,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+.test_Page_Flipping.py
+.test.py
+.redandwhitekop.py
+
 ### VirtualEnv template
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -151,7 +155,3 @@ cython_debug/
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-
-!/test_Page_Flipping.py
-!/test.py
-!/redandwhitekop.py
