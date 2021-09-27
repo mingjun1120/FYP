@@ -2,6 +2,7 @@ import os
 from ITF_Learning import main_ITF_Learning
 from Index_Thread import main_Index_Thread
 from Page_Flipping import main_PageFlipping
+import subprocess
 
 if __name__ == '__main__':
     print(f"\nFORUM: SixCrazyMinutes")
@@ -23,3 +24,8 @@ if __name__ == '__main__':
         for line in [regexCreatedIndex, firstBackUrlIndex, regexCreatedThread, firstBackUrlThread, regexCreatedPageFlip, firstBackUrlPageFlip]:
             f.write(line)
             f.write('\n')
+
+    command_line = 'scrapy runspider ForumCrawler.py -O FinalOutput.csv'
+    subprocess.Popen(command_line)
+
+    print('main.py and crawler done running')
