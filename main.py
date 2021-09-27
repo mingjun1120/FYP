@@ -28,4 +28,4 @@ if __name__ == '__main__':
     command_line = 'scrapy runspider ForumCrawler.py -O FinalOutput.csv'
     subprocess.Popen(command_line)
 
-    print('main.py and crawler done running')
+    print('\nmain.py and crawler done running')
