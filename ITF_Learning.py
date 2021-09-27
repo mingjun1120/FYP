@@ -100,10 +100,11 @@ def countUniqueValOccurrences(third_back_split_url):
     return each_unique_value_count
 
 
-def learn_ITF(pageType, urlsType, regexForPageFlip = None):
+def learn_ITF(pageType, urlsType, regexForPageFlip=None):
     print(f'\n{pageType} URL INFORMATION:')
     print(f'------------------------')
-    url, main_url, back_url, first_back_split_url, second_back_split_url, third_back_split_url = zip(*[separate_urls(value) for value in urlsType])
+    url, main_url, back_url, first_back_split_url, second_back_split_url, third_back_split_url = zip(
+        *[separate_urls(value) for value in urlsType])
     print(f'Main URL: {list(set(main_url))}')
     print(f'1st back URLS: {list(set(first_back_split_url))}')
     print(f'2nd back URLS: {list(set(second_back_split_url))}')
@@ -122,11 +123,13 @@ def learn_ITF(pageType, urlsType, regexForPageFlip = None):
         each_unique_value_count_first_back_split_url = countUniqueValOccurrences(first_back_split_url)
 
         # Unique value that has the highest number of occurrences
-        max_key = max(each_unique_value_count_first_back_split_url, key=each_unique_value_count_first_back_split_url.get)
+        max_key = max(each_unique_value_count_first_back_split_url,
+                      key=each_unique_value_count_first_back_split_url.get)
         max_value = max(each_unique_value_count_first_back_split_url.values())
 
         # Unique value that has the minimum number of occurrences
-        min_key = min(each_unique_value_count_first_back_split_url, key=each_unique_value_count_first_back_split_url.get)
+        min_key = min(each_unique_value_count_first_back_split_url,
+                      key=each_unique_value_count_first_back_split_url.get)
         min_value = min(each_unique_value_count_first_back_split_url.values())
 
         if max_value >= 15 and min_value >= 15:
@@ -145,7 +148,7 @@ def learn_ITF(pageType, urlsType, regexForPageFlip = None):
 
     # Used for page-flipping only. Count each unique value occurrences and retrieve the values that has the highest number of occurrences
     each_unique_value_count_third_back_split_url = countUniqueValOccurrences(third_back_split_url)
-    max_key = max(each_unique_value_count_third_back_split_url, key = each_unique_value_count_third_back_split_url.get)
+    max_key = max(each_unique_value_count_third_back_split_url, key=each_unique_value_count_third_back_split_url.get)
     if max_key != '':
         combined = combined + regexForPageFlip.replace('$', '') + '\/'
 
@@ -288,9 +291,10 @@ def learn_ITF(pageType, urlsType, regexForPageFlip = None):
     print(f'\nURL REGEX ({pageType} PAGE):')
     print(f'--------------------------------------------')
     if pageType != 'PAGE-FLIPPING':
-        print(f'^(http[s]?:\/\/)([A-Za-z0-9-]+\.[A-Za-z0-9]+){1,2}\/{first_back_Url}\/{regexCreated.replace("^", "")}')
+        print(f'^(http[s]?:\/\/)([A-Za-z0-9-]+\.[A-Za-z0-9]+){1, 2}\/{first_back_Url}\/{regexCreated.replace("^", "")}')
     else:
-        print(f'^(http[s]?:\/\/)([A-Za-z0-9-]+\.[A-Za-z0-9]+){1,2}\/{first_back_Url}\/{regexForPageFlip.replace("$", "")}\/{regexCreated.replace("^", "")}')
+        print(
+            f'^(http[s]?:\/\/)([A-Za-z0-9-]+\.[A-Za-z0-9]+){1, 2}\/{first_back_Url}\/{regexForPageFlip.replace("$", "")}\/{regexCreated.replace("^", "")}')
 
     return regexCreated, first_back_Url
 
@@ -316,10 +320,11 @@ def main_ITF_Learning():
             firstBackUrlThread = first_back_Url
 
     # Handles page-flipping urls
-    regexCreatedPageFlip, firstBackUrlPageFlip = learn_ITF("PAGE-FLIPPING", page_flipping_urls, regexCreated.replace("^", ""))
+    regexCreatedPageFlip, firstBackUrlPageFlip = learn_ITF("PAGE-FLIPPING", page_flipping_urls,
+                                                           regexCreated.replace("^", ""))
 
     return regexCreatedIndex, firstBackUrlIndex, regexCreatedThread, firstBackUrlThread, regexCreatedPageFlip, firstBackUrlPageFlip
 
 
 if __name__ == '__main__':
-    main_ITF_Learning() # regexCreatedIndex, regexCreatedThread, regexCreatedPageFlip
+    main_ITF_Learning()  # regexCreatedIndex, regexCreatedThread, regexCreatedPageFlip
