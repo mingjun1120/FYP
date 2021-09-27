@@ -218,6 +218,6 @@ cython_debug/
 # pytype static type analyzer
 
 # Cython debug symbols
-test.py
-test_Page_Flipping.py
-redandwhitekop.py
+.test.py
+.test_Page_Flipping.py
+.redandwhitekop.py

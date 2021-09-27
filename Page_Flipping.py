@@ -112,35 +112,35 @@ def findPageFlippingUrls(all_thread_index_urls):
         r_html = get_page(url)  # https://www.redandwhitekop.com/forum/index.php?board=17.0
 
         if r_html is not None:
-            if r_html.find('div.pagelinks.floatleft', first=True) is not None:
-
-                # Get the 1st page's possible page-flipping urls
-                possiblePagesNum, possiblePageLink = get_PageNum_PageLink('div.pagelinks.floatleft', r_html)
-
-                if len(possiblePageLink) != 0:
-                    # From the possiblePageLink, get the 2nd page page-flipping urls
-                    r_html = get_page(possiblePageLink[0])
-
-                    # Get the 2nd page's possible page-flipping urls
-                    lastPossiblePagesNum, lastPossiblePageLink = get_PageNum_PageLink('div.pagelinks.floatleft', r_html)
-
-                    # Compare the last page number of  1st page's possible page-flipping urls and 2nd page's possible page-flipping urls
-                    print(f'The LAST PAGE NUMBER and LINK of 1st page-flipping url: {possiblePagesNum[-1]}, {possiblePageLink[-1]}')
-                    print(f'The LAST PAGE NUMBER and LINK of 2nd page-flipping url: {lastPossiblePagesNum[-1]}, {lastPossiblePageLink[-1]}')
-                    print(f'Are they same? : {possiblePagesNum[-1] == lastPossiblePagesNum[-1]}, {possiblePageLink[-1] == lastPossiblePageLink[-1]} (If same means that they are valid page-flipping urls)')
-
-                    if (possiblePagesNum[-1] == lastPossiblePagesNum[-1]) and (possiblePageLink[-1] == lastPossiblePageLink[-1]):
-                        if "lfcreds.com" in url:
-                            index = find2ndLastIndex(lastPossiblePageLink[-1], '.')
-                        else:
-                            index = findLastIndex(lastPossiblePageLink[-1], '.')
-                        # print(index)
-                        # print(f'{lastPossiblePageLink[-1][:index + 1]}')
-                        # print(f'{lastPossiblePageLink[-1][index + 1:]}')
-                        page_flipping_urls += crawlAllPageFlipLinks(index, lastPossiblePageLink, url)
-                else:
-                    print("No page flipping url was found!\n")
-            elif r_html.find('div.PageNav', first=True) is not None:
+            # if r_html.find('div.pagelinks.floatleft', first=True) is not None:
+            #
+            #     # Get the 1st page's possible page-flipping urls
+            #     possiblePagesNum, possiblePageLink = get_PageNum_PageLink('div.pagelinks.floatleft', r_html)
+            #
+            #     if len(possiblePageLink) != 0:
+            #         # From the possiblePageLink, get the 2nd page page-flipping urls
+            #         r_html = get_page(possiblePageLink[0])
+            #
+            #         # Get the 2nd page's possible page-flipping urls
+            #         lastPossiblePagesNum, lastPossiblePageLink = get_PageNum_PageLink('div.pagelinks.floatleft', r_html)
+            #
+            #         # Compare the last page number of  1st page's possible page-flipping urls and 2nd page's possible page-flipping urls
+            #         print(f'The LAST PAGE NUMBER and LINK of 1st page-flipping url: {possiblePagesNum[-1]}, {possiblePageLink[-1]}')
+            #         print(f'The LAST PAGE NUMBER and LINK of 2nd page-flipping url: {lastPossiblePagesNum[-1]}, {lastPossiblePageLink[-1]}')
+            #         print(f'Are they same? : {possiblePagesNum[-1] == lastPossiblePagesNum[-1]}, {possiblePageLink[-1] == lastPossiblePageLink[-1]} (If same means that they are valid page-flipping urls)')
+            #
+            #         if (possiblePagesNum[-1] == lastPossiblePagesNum[-1]) and (possiblePageLink[-1] == lastPossiblePageLink[-1]):
+            #             if "lfcreds.com" in url:
+            #                 index = find2ndLastIndex(lastPossiblePageLink[-1], '.')
+            #             else:
+            #                 index = findLastIndex(lastPossiblePageLink[-1], '.')
+            #             # print(index)
+            #             # print(f'{lastPossiblePageLink[-1][:index + 1]}')
+            #             # print(f'{lastPossiblePageLink[-1][index + 1:]}')
+            #             page_flipping_urls += crawlAllPageFlipLinks(index, lastPossiblePageLink, url)
+            #     else:
+            #         print("No page flipping url was found!\n")
+            if r_html.find('div.PageNav', first=True) is not None:
 
                 # Get the 1st page's possible page-flipping urls
                 possiblePagesNum, possiblePageLink = get_PageNum_PageLink2('div.PageNav', r_html, url)
