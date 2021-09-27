@@ -59,6 +59,7 @@ Either one of the websites below will do since both produce the same link struct
 - http://www.sixcrazyminutes.com/forums/ **(I use this)**
 - http://www.sportsjournalists.com/forum/
 - https://www.gardenstew.com/
+- https://www.namepros.com/
 
 ### How to run the learning links' patterns and create regular expression program:
 Go to **`main.py`** and run it! (Will take some time)
