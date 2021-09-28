@@ -2,7 +2,6 @@ import os
 from ITF_Learning import main_ITF_Learning
 from Index_Thread import main_Index_Thread
 from Page_Flipping import main_PageFlipping
-import subprocess
 
 if __name__ == '__main__':
     print(f"\nFORUM: SixCrazyMinutes")
@@ -25,7 +24,6 @@ if __name__ == '__main__':
             f.write(line)
             f.write('\n')
 
-    command_line = 'scrapy runspider ForumCrawler.py -O FinalOutput.csv'
-    subprocess.Popen(command_line)
-
-    print('\nmain.py and crawler done running')
+    stream = os.popen('scrapy runspider ForumCrawler.py -O FinalOutput.csv')
+    output = stream.read()
+    print(output)
