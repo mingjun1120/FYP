@@ -138,7 +138,7 @@ def learn_ITF(pageType, urlsType, regexForPageFlip=None):
                       key=each_unique_value_count_first_back_split_url.get)
         min_value = min(each_unique_value_count_first_back_split_url.values())
 
-        if max_value >= 15 and min_value >= 15:
+        if max_value >= 10 and min_value >= 10:
             combined = list(set(main_url))[0] + f'({max_key}|{min_key})' + '/'
             first_back_Url = f'({max_key}|{min_key})'
         else:
