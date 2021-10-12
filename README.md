@@ -58,7 +58,7 @@ these 3 regular expression and perform crawling.
 Either one of the websites below will do since both produce the same link structure pattern:
 - http://www.sixcrazyminutes.com/forums/ **(I use this)**
 - https://www.gardenstew.com/
-- https://www.namepros.com/
+- https://ukofequestria.co.uk/
 
 ### How to run the learning links' patterns and create regular expression program:
 Go to **`main.py`** and run it! (Will take some time)
@@ -66,9 +66,10 @@ Go to **`main.py`** and run it! (Will take some time)
 ## Web forum that can be crawled
 Most of the web forums that was built by using [XenForo](https://xenforo.com/) can be crawled. Here are some of the lists you can try:
 
-- https://www.namepros.com/
-- https://www.gardenstew.com/
 - http://www.sixcrazyminutes.com/forums/
+- https://www.gardenstew.com/
+- https://ukofequestria.co.uk/
+- https://www.namepros.com/
 - http://www.sportsjournalists.com/forum/
 - https://www.bladeforums.com/
 - https://forums.sufficientvelocity.com/
