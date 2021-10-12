@@ -30,8 +30,8 @@ with open('URL_Regex.txt') as f:
 
 class ForumcrawlerSpider(CrawlSpider):
     name = 'ForumCrawler'
-    allowed_domains = ['co.uk']
-    start_urls = ['https://ukofequestria.co.uk/']
+    allowed_domains = ['co.uk'] # sixcrazyminutes.com, gardenstew.com,  co.uk
+    start_urls = ['https://ukofequestria.co.uk/'] # http://sixcrazyminutes.com/forums/, https://www.gardenstew.com/, https://ukofequestria.co.uk/
 
     rules = (Rule(LinkExtractor(tags='a', allow=(firstBackUrlPageFlip + '\/' + regexCreatedIndex[1:-1],)), callback='parse_item', follow=True),)
 
