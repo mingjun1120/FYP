@@ -30,8 +30,14 @@ def get_thread_index_urls():
 
 
 def separate_urls(url):
-    main_url = url[:url.index(".com/") + len(".com/")]
-    back_url = url[url.index(".com/") + len(".com/"):]
+
+    if '.com/' in url:
+        main_url = url[:url.index(".com/") + len(".com/")]
+        back_url = url[url.index(".com/") + len(".com/"):]
+    else:
+        main_url = url[:url.index(".uk/") + len(".uk/")]
+        back_url = url[url.index(".uk/") + len(".uk/"):]
+
     first_back_split_url = back_url.split('/')[0]
     second_back_split_url = back_url.split('/')[1]
     try:

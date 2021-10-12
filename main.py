@@ -4,7 +4,7 @@ from Index_Thread import main_Index_Thread
 from Page_Flipping import main_PageFlipping
 
 if __name__ == '__main__':
-    print(f"\nFORUM: SixCrazyMinutes")
+    print(f"\nFORUM: UK of Equestria") # SixCrazyMinutes, GardenStew
     main_Index_Thread()
 
     print(f'CRAWL PAGE FLIPPING URLS')

@@ -47,7 +47,10 @@ def get_PageNum_PageLink2(html, r_html, url):
 
     # Find the anchor text which is digit (e.g. 1, 2, 3, 55)
     possiblePagesNum = [int(link_text.text) for link_text in possiblePages.find('a') if link_text.text.isdigit()]
-    url = url[:url.index(".com/") + len(".com/")]
+    if '.com/' in url:
+        url = url[:url.index(".com/") + len(".com/")]  # url = 'https://' + urlparse(url).netloc + '/'
+    else:
+        url = url[:url.index(".uk/") + len(".uk/")]
     possiblePageLink = [url + link.xpath('//@href', first=True) for link in possiblePages.find('a') if link.text.isdigit()]
 
     return possiblePagesNum, possiblePageLink

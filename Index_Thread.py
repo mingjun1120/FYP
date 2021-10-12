@@ -26,7 +26,10 @@ def get_href(link_table_for_href, forums, url, html2):
     for forum in forums.find(html2):
         group = {}  # div.nodeText > h3.nodeTitle > a
         for count, link in enumerate(forum.xpath('//a/@href')):
-            url = url[:url.index(".com/") + len(".com/")]  # url = 'https://' + urlparse(url).netloc + '/'
+            if '.com/' in url:
+                url = url[:url.index(".com/") + len(".com/")]  # url = 'https://' + urlparse(url).netloc + '/'
+            else:
+                url = url[:url.index(".uk/") + len(".uk/")]
             link = url + link
             group[f"Group_{count + 1}"] = link
         link_table_for_href.append(group)
@@ -116,26 +119,38 @@ def classify_Index_Thread_Url(it_group):
         print(f'CHECKING URL: {link}')
 
         if r_html is not None:
-            extracted_table = r_html.find('ol')
 
-            if len(extracted_table) != 0:
-                if "This site uses cookies" in extracted_table[0].text:
-                    extracted_table = extracted_table[1]
-                else:
-                    extracted_table = extracted_table[0]
-                try:
-                    if extracted_table.text.lower().count("discussions") >= 1 and extracted_table.text.lower().count("messages") >= 1:
-                        index_BoardList_url.append(link)
-                        print('INDEX_BOARD_LIST URL')
-                    elif extracted_table.text.lower().count("replies") >= 1 and extracted_table.text.lower().count("views") >= 1:
-                        index_board_thread_url.append(link)
-                        print('INDEX_BOARD_THREAD URL')
-                    else:
-                        print('UNRELATED URL')
-                except:
-                    print("UNRELATED URL")
+            if r_html.find('ol#forums', first = True) is not None:
+                index_BoardList_url.append(link)
+                print('INDEX_BOARD_LIST URL')
+
+            elif r_html.find('ol.discussionListItems', first = True) is not None:
+                index_board_thread_url.append(link)
+                print('INDEX_BOARD_THREAD URL')
+
             else:
-                print("UNRELATED URL")
+                print('UNRELATED URL')
+
+            # extracted_table = r_html.find('ol')
+            #
+            # if len(extracted_table) != 0:
+            #     if "This site uses cookies" in extracted_table[0].text:
+            #         extracted_table = extracted_table[1]
+            #     else:
+            #         extracted_table = extracted_table[0]
+            #     try:
+            #         if (extracted_table.text.lower().count("discussions") >= 1 and extracted_table.text.lower().count("messages") >= 1) or (extracted_table.text.lower().count("threads") >= 1 and extracted_table.text.lower().count("posts") >= 1):
+            #             index_BoardList_url.append(link)
+            #             print('INDEX_BOARD_LIST URL')
+            #         elif extracted_table.text.lower().count("replies") >= 1 and extracted_table.text.lower().count("views") >= 1:
+            #             index_board_thread_url.append(link)
+            #             print('INDEX_BOARD_THREAD URL')
+            #         else:
+            #             print('UNRELATED URL')
+            #     except:
+            #         print("UNRELATED URL")
+            # else:
+            #     print("UNRELATED URL")
         else:
             print("WEBPAGE DOESN'T EXIST")
 
@@ -143,8 +158,7 @@ def classify_Index_Thread_Url(it_group):
 
 
 def main_Index_Thread():
-    urls = ["http://sixcrazyminutes.com/forums/"]  # "https://www.gardenstew.com/"
-
+    urls = ["https://ukofequestria.co.uk/"]  # http://sixcrazyminutes.com/forums/, "https://www.gardenstew.com/", https://ukofequestria.co.uk/
     index_BoardList_urls = []
     index_board_thread_urls = []
 
@@ -209,5 +223,6 @@ def main_Index_Thread():
 
                 with open('thread_url.txt', 'a') as f:
                     for line in it_group:
-                        f.write(line)
-                        f.write('\n')
+                        if type(line) is str:
+                            f.write(line)
+                            f.write('\n')
