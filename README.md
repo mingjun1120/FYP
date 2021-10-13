@@ -63,7 +63,7 @@ Either one of the websites below will do since both produce the same link struct
 ### How to run the learning links' patterns and create regular expression program:
 Go to **`main.py`** and run it! (Will take some time)
 
-## Web forum that can be crawled
+## Web forums that can be crawled
 Most of the web forums that was built by using [XenForo](https://xenforo.com/) can be crawled. Here are some of the lists you can try:
 
 - http://www.sixcrazyminutes.com/forums/
