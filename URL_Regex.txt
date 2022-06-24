@@ -3,4 +3,4 @@ forums
 ^([a-zA-Z0-9]+-[a-zA-Z0-9]+)+\.\d+$
 threads
 ^page-\d+$
-(forums|threads)
+forums
