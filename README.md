@@ -25,17 +25,17 @@ Python 3.7+ will do
 
 Firstly, open up the **terminal** and **activate** your project's Python virtual environment then type the below command:
 
-**View only:**
+**View results only:**
 ```
 scrapy runspider ForumCrawler.py
 ```
 
-**View & Store in csv file:**
+**View & Store results in csv file:**
 ```
 scrapy runspider ForumCrawler.py -O FinalOutput.csv
 ```
 
-**View & Store in JSON file:**
+**View & Store results in JSON file:**
 ```
 scrapy runspider ForumCrawler.py -O FinalOutput.json
 ```
